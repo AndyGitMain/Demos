@@ -12,7 +12,7 @@ SRCS = $(OBJECTS:.o=.c)
 
 all : myadd
 
-myadd : myadd.c
+myadd : $(SRCS)
 	$(CC) $(CFLAGS) $(SRCS)
 
 clean :

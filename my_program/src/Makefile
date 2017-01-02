@@ -8,21 +8,16 @@ CFLAGS = -g -c
 INC = ../my_inc/
 OBJECT1 = main.o helper.o
 OBJECT2 = myadd.o
-SRCS = $(OBJECTS:.o=.c)
+SRC1 = $(OBJECT1:.o=.c)
+SRC2 = $(OBJECT2:.o=.c)
 TARGET = myprj
 
+all : src
+	$(CC) -o $(TARGET) $(OBJECT1) $(INC)$(OBJECT2)
 
-all : $(OBJECT1) #$(OBJECT2)
-#	$(CC) -o $(TARGET) $(OBJECT1) $(INC)$(OBJECT2)
-
-main.o : main.c
-	$(CC) $(CFLAGS) $<
-helper.o : helper.c
-	$(CC) $(CFLAGS) $<
-#myadd.o :
-#	$(MAKE) -C $(INC)
-
+src : $(SRC1)
+	$(CC) $(CFLAGS) $^
 
 clean :
-	rm -rf $(OBJECT1) $(OBJECT2)
+	rm -rf $(OBJECT1) $(TARGET)
 
