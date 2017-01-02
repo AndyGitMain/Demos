@@ -11,24 +11,24 @@ PRJRELEASE=$(VERSION).$(PATCHLEVEL).$(SUBLEVEL)$(EXTRAVERSION)
 #
 # Compile Option
 #
+.SUFFIXES : .c .o
 CC = gcc
 CFLAGS = -g -c
-
-#
-# Directory
-#
-INC = -I./my_inc
-SRCDIR = -I./src
+INC = ./my_inc/
+SRCDIR = ./src/
 TARGET = myprj
+OBJECT1 = myadd.o
+OBJECT2 = main.o helper.o
 
 all : myinc source
-#	$(CC) -o $(TARGET) $(myinc) $(source)
+	$(CC) -o $(TARGET) $(INC)$(OBJECT1) $(SRCDIR)main.o $(SRCDIR)helper.o 
+
 
 myinc :
-	cd my_inc ; $(MAKE)
+	$(MAKE) -C $(INC)
 source :
-	cd src ; $(MAKE)
+	$(MAKE) -C $(SRCDIR)
 
 clean :
-	rm -rf $(OBJECTS) $(TARGET)
+	rm -rf $(INC)$(OBJECT1) $(SRCDIR)main.o $(SRCDIR)helper.o
 

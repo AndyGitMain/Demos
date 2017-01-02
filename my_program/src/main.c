@@ -6,7 +6,8 @@
 int main(int argc, char *argv[])
 {
 
-	printf("Sum is : %d\n", addnew(1, 1));
+	//	help();
+	printf("Sum is : %d\n", addnewda(1, 1));
 	
     return 0;
 }

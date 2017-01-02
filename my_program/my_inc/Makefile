@@ -6,16 +6,15 @@
 CC = gcc
 CFLAGS = -g -c
 
-#
-# Directory
-#
 
 OBJECTS = myadd.o
 SRCS = $(OBJECTS:.o=.c)
 
 all : myadd
 
-myadd : $(SRCS)
+myadd : myadd.c
 	$(CC) $(CFLAGS) $(SRCS)
 
+clean :
+	rm -rf $(OBJECTS)
 

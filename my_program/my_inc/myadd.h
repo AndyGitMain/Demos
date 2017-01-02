@@ -1,5 +1,5 @@
-#ifndef _MY_INC_MYADD_H_
-#define _MY_INC_MYADD_H_
+//#ifndef _MY_INC_MYADD_H_
+//#define _MY_INC_MYADD_H_
 
 /*
  * Copyright (C) 2016 Janghwan Oh
@@ -8,7 +8,7 @@
  */
 
 // Adds new add function
-int addnew(int a, int b);
+int addnewda(int a, int b);
 
 
-#endif	/* defined(_MY_INC_MYADD_H_) */
+//#endif	/* defined(_MY_INC_MYADD_H_) */
