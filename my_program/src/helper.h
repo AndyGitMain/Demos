@@ -7,10 +7,6 @@
  * Demo file for CEDET
  */
 
-class Helper {
- public:
-	// Helps
-	void help();
-};
+void help();
 
 #endif	/* defined(_SRC_HELPER_H_) */

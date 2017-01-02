@@ -1,6 +1,6 @@
 #include "helper.h"
 
-void Helper::help() {
+void help() {
 	// do nothing
 	return;
 }
