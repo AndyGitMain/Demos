@@ -19,12 +19,17 @@ CFLAGS += -c
 
 SUBDIRS = my_inc src
 TARGET = myprj
+SUBTARGET = ./src/myprj
 
-all :
+all : $(TARGET)
+
+$(TARGET) : $(SUBTARGET)
+	cp $(SUBTARGET) ./
+
+$(SUBTARGET) :
 	for i in $(SUBDIRS); do\
 		cd $$i; make all; cd ..;\
 	done
-	cp ./src/$(TARGET) ./
 
 clean :
 	for i in $(SUBDIRS); do\
