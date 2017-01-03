@@ -37,3 +37,13 @@ clean :
 	done
 	rm $(TARGET)
 
+
+#dep :
+#	$(CC) -M $(INC) $(SRCS) > .depend
+#
+#distclean :
+#	rm -rf .depend
+#
+#ifeq (.depend, $(wildcard .depend))
+#include .depend
+#endif
