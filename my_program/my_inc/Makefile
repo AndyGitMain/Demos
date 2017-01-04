@@ -4,16 +4,23 @@
 # Compile Option
 #
 CC = gcc
-CFLAGS = -g -c
+CFLAGS += -g
+CFLAGS += -c
+CFLAGS += -fPIC
 
-
+AR = ar
 OBJECTS = myadd.o
 SRCS = $(OBJECTS:.o=.c)
+TARGET = myadd.so.1
 
-all : myadd
+all : $(TARGET)
 
-myadd : $(SRCS)
+$(TARGET) : $(OBJECTS)
+	$(CC) -shared -Wl,-soname,$@ -o $@ $(OBJECTS)
+
+$(OBJECTS) : $(SRCS)
 	$(CC) $(CFLAGS) $(SRCS)
+
 
 clean :
 	rm -rf $(OBJECTS)
